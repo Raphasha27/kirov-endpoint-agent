@@ -1,0 +1,29 @@
+agent_id: ""
+core_url: "http://localhost:8000"
+heartbeat_interval: 60
+log_level: "info"
+monitoring:
+  process_monitoring: true
+  login_monitoring: true
+  file_integrity: true
+  system_health: true
+watch_dirs:
+  - "/etc"
+  - "/usr/local/bin"
+  - "/opt"
+allowed_processes:
+  - "systemd"
+  - "sshd"
+  - "nginx"
+  - "postgres"
+  - "redis-server"
+  - "dockerd"
+  - "python3"
+  - "node"
+  - "go"
+blacklist_processes:
+  - "mimikatz"
+  - "powershell -enc"
+  - "nc"
+  - "ncat"
+  - "cryptominer"
