@@ -48,6 +48,9 @@ func main() {
 	healthChan := make(chan collector.SystemHealth, 100)
 
 	rep := reporter.New(cfg.CoreURL, cfg.AgentID, log.Logger)
+	if cfg.Token != "" {
+		rep.SetToken(cfg.Token)
+	}
 
 	if cfg.Monitoring.ProcessMonitoring {
 		procCollector := collector.NewProcessCollector(

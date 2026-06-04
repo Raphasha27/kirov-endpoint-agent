@@ -21,6 +21,7 @@ type MonitoringConfig struct {
 type AgentConfig struct {
 	AgentID            string           `yaml:"agent_id"`
 	CoreURL            string           `yaml:"core_url"`
+	Token              string           `yaml:"-"`
 	HeartbeatInterval  time.Duration    `yaml:"-"`
 	HeartbeatSec       int              `yaml:"heartbeat_interval"`
 	LogLevel           string           `yaml:"log_level"`
@@ -90,6 +91,9 @@ func Load(path string) (*AgentConfig, error) {
 	}
 	if v := os.Getenv("KIROV_BLACKLIST_PROCESSES"); v != "" {
 		cfg.BlacklistProcesses = strings.Split(v, ",")
+	}
+	if v := os.Getenv("KIROV_AGENT_TOKEN"); v != "" {
+		cfg.Token = v
 	}
 
 	return cfg, nil
