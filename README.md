@@ -97,6 +97,14 @@ The agent communicates with the Kirov Security Core via REST API:
 
 On startup the agent registers itself, receives a JWT token, and begins sending heartbeats every 60 seconds. Alerts are queued locally and sent asynchronously; if the core is unreachable, up to 1000 alerts are buffered in memory.
 
+<br/>
+
+---
+
+<p align="center">
+  <sub>🔒 <a href="https://github.com/Raphasha27">Raphasha27</a> Security Ecosystem — <a href="https://github.com/Raphasha27/Raphasha27">Back to Profile</a></sub>
+</p>
+
 ## License
 
 Proprietary. Kirov Security.
